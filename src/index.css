@@ -1,0 +1,93 @@
+@import 'tailwindcss';
+@import '@fontsource/manrope/latin-500.css';
+@import '@fontsource/manrope/latin-700.css';
+@import '@fontsource/fraunces/latin-600.css';
+
+:root {
+  --paper: #f8f4e9;
+  --sand-100: #f7f2e7;
+  --sand-200: #eae1cf;
+  --sand-300: #d8ccb5;
+  --sand-400: #b6a78e;
+  --mint-100: #e8f8f3;
+  --mint-200: #c9efe2;
+  --mint-300: #8edfc7;
+  --brand-500: #17a88f;
+  --brand-600: #008077;
+  --brand-700: #025d57;
+  --ink-500: #5f6e6a;
+  --ink-600: #445351;
+  --ink-700: #2b3f3c;
+  --ink-800: #1a2f2c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Manrope', 'Trebuchet MS', sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  color: var(--ink-700);
+  background:
+    radial-gradient(circle at 10% 10%, rgba(23, 168, 143, 0.18), transparent 42%),
+    radial-gradient(circle at 88% 18%, rgba(255, 191, 133, 0.3), transparent 40%),
+    var(--paper);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.font-heading {
+  font-family: 'Fraunces', 'Georgia', serif;
+  letter-spacing: -0.01em;
+}
+
+.font-display {
+  font-family: 'Manrope', 'Trebuchet MS', sans-serif;
+}
+
+.shadow-soft {
+  box-shadow: 0 20px 38px -28px rgba(26, 47, 44, 0.55);
+}
+
+.ambient-glow {
+  position: absolute;
+  top: -60px;
+  left: -20px;
+  width: 160px;
+  height: 160px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(23, 168, 143, 0.35) 0%, rgba(23, 168, 143, 0) 68%);
+  filter: blur(2px);
+  animation: float 7s ease-in-out infinite;
+}
+
+.screen-appear {
+  animation: screen-appear 0.36s ease both;
+}
+
+@keyframes screen-appear {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  50% {
+    transform: translateY(8px) translateX(8px);
+  }
+}
